@@ -1,12 +1,12 @@
 
   <nav class="top-nav">
   <li>
-         <img style="height: 23px;" src="<?php echo URLROOT; ?>/public/img/logo.png "alt="" srcset="">
+         <img style="height: 33px;" src="<?php echo URLROOT; ?>/public/img/logo.png "alt="" srcset="">
         </li>
     <ul>
     
         <li>
-            <a href="<?php echo URLROOT; ?>/index">Acceuil</a>
+            <a href="<?php echo URLROOT; ?>index">Acceuil</a>
         </li>
         <li>
             <a href="<?php echo URLROOT; ?>/entreprises">Listentreprise</a>

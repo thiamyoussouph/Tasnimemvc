@@ -54,7 +54,7 @@ class Users extends Controller {
                 }
             }
 
-           // Validate password on length, numeric values,
+     
             if(empty($data['password'])){
               $data['passwordError'] = 'Please enter password.';
             } elseif(strlen($data['password']) < 6){
@@ -62,8 +62,7 @@ class Users extends Controller {
             } elseif (preg_match($passwordValidation, $data['password'])) {
               $data['passwordError'] = 'Password must be have at least one numeric value.';
             }
-
-            //Validate confirm password
+        
              if (empty($data['confirmPassword'])) {
                 $data['confirmPasswordError'] = 'Please enter password.';
             } else {
@@ -72,15 +71,15 @@ class Users extends Controller {
                 }
             }
 
-            // Make sure that errors are empty
+          
             if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
 
-                // Hash password
+    
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                //Register user from model function
+          
                 if ($this->userModel->register($data)) {
-                    //Redirect to the login page
+                
                     header('location: ' . URLROOT . '/users/login');
                 } else {
                     die('Something went wrong.');
@@ -99,9 +98,9 @@ class Users extends Controller {
             'passwordError' => ''
         ];
 
-        //Check for post
+    
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //Sanitize post data
+         
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
@@ -110,17 +109,17 @@ class Users extends Controller {
                 'usernameError' => '',
                 'passwordError' => '',
             ];
-            //Validate username
+            
             if (empty($data['username'])) {
                 $data['usernameError'] = 'Please enter a username.';
             }
 
-            //Validate password
+          
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter a password.';
             }
 
-            //Check if all errors are empty
+          
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['username'], $data['password']);
 

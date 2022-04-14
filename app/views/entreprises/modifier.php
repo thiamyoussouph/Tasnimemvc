@@ -14,7 +14,7 @@
       
            <form style="margin-top:7%" action="<?php echo URLROOT;?>/entreprises/modifier/<?php echo $data['affiche']->id?>"
             method="post">
-            <?php var_dump($data);?>
+          
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nom de l'entreprise</label>
               <input type="text" class="form-control" id="nometreprise" name="nom" value="<?php echo $data['affiche']->nom?>" aria-describedby="emailHelp">
