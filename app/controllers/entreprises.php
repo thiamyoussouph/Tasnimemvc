@@ -183,7 +183,7 @@ class entreprises extends controller
 
             // if (empty($data["nomError"]) && empty($data["adresseError"]) && empty($data["prenom_nom_repondtantError"]) && empty($data["telelError"]) && empty($data["nienaError"]) && empty($data["datecreation"]) && empty($data["nombreEnployer"])) {
             if ($this->entreprisesModel->modifierentreprise($data)) {
-      echo'leppp falaw';
+      
                 // header("location:" . URLROOT . "/entreprises");
             } else {
                 die('reaisyer plus tard');
